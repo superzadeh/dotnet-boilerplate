@@ -1,0 +1,13 @@
+version: '3.2'
+
+services:
+
+  NewProject:
+    build:
+      dockerfile: Dockerfile.dev
+    ports: 
+      - 8080:80
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ./src/NewProject:/code/app

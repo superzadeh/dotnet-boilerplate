@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+
+  NewProject:
+    container_name: "newproject"
+    build:
+      context: ./src/NewProject
+      dockerfile: Dockerfile
+    image: bunch/newproject
