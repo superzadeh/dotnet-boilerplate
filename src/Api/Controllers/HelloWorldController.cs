@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Microsoft.eShopOnContainers.Services.Ordering.API.Controllers
+namespace Api
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -11,7 +11,7 @@ namespace Microsoft.eShopOnContainers.Services.Ordering.API.Controllers
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return Ok("Hello world");
+            return Ok("Hello Yolo");
         }
     }
 }
