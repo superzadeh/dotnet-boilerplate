@@ -5,11 +5,11 @@
 ### Create the project and add it to the SLN
 
 ```sh
-mkdir -p src/NewProject
-cd src/NewProject
+mkdir -p src/Api
+cd src/Api
 dotnet new web
 cd ../../
-dotnet sln add src/NewProject/NewProject.csproj
+dotnet sln add src/Api/Api.csproj
 ```
 
 ### Dockerize
@@ -17,7 +17,7 @@ dotnet sln add src/NewProject/NewProject.csproj
 Copy the content of the `template` folder into your new project.
 
 ```sh
-cp template/* src/NewProject/*
+cp template/* src/Api/*
 ```
 
 Add the following reference to your `.csproj` to enable the file watcher:
@@ -33,16 +33,16 @@ environment and volumes in `docker-compose.override.yml`.
 
 ```yml
 # docker-compose.yml
-  NewProject:
-    container_name: "newproject"
+  Api:
+    container_name: "Api"
     build:
-      context: ./src/NewProject
+      context: ./src/Api
       dockerfile: Dockerfile
-    entrypoint: "dotnet NewProject.dll"
-    image: bunch/newproject
+    entrypoint: "dotnet Api.dll"
+    image: bunch/Api
 
 # docker-compose.override.yml
-  NewProject:
+  Api:
     build:
       dockerfile: Dockerfile.dev
     ports: 
@@ -50,7 +50,7 @@ environment and volumes in `docker-compose.override.yml`.
     environment: 
       - ASPNETCORE_ENVIRONMENT=Development
     volumes:
-      - ./src/NewProject:/code/app
+      - ./src/Api:/code/app
 
 ```
 

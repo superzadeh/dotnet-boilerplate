@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
 
-  NewProject:
+  Api:
     build:
       dockerfile: Dockerfile.dev
     ports: 
@@ -10,4 +10,4 @@ services:
     environment: 
       - ASPNETCORE_ENVIRONMENT=Development
     volumes:
-      - ./src/NewProject:/code/app
+      - ./src/Api:/code/app

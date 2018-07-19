@@ -2,9 +2,9 @@ version: '3.2'
 
 services:
 
-  NewProject:
-    container_name: "newproject"
+  Api:
+    container_name: "api"
     build:
-      context: ./src/NewProject
+      context: ./src/Api
       dockerfile: Dockerfile
-    image: bunch/newproject
+    image: bunch/api
