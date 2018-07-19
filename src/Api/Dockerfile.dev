@@ -1,8 +1,8 @@
-# from http://www.natemcmaster.com/blog/2017/11/13/dotnet-watch-and-docker/
 FROM microsoft/dotnet:2.1-sdk AS build-env
 
 # Required inside Docker, otherwise file-change events may not trigger
 ENV DOTNET_USE_POLLING_FILE_WATCHER 1
+ENV DOTNET_RUNNING_IN_CONTAINER true
 
 # Set a working dir at least 2 deep. The output and intermediate output folders will be /code/obj and /code/bin
 WORKDIR /code/app
@@ -13,5 +13,4 @@ COPY NuGet.config .
 COPY Directory.Build.props .
 RUN dotnet restore
 
-# This will build and launch the server in a loop, restarting whenever a *.cs file changes
-ENTRYPOINT dotnet watch run --no-restore
+ENTRYPOINT dotnet watch run
