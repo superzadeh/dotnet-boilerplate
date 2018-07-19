@@ -2,12 +2,12 @@ version: '3.2'
 
 services:
 
-  Api:
+  api:
     build:
       dockerfile: Dockerfile.dev
-    ports: 
+    ports:
       - 8080:80
-    environment: 
+    environment:
       - ASPNETCORE_ENVIRONMENT=Development
     volumes:
       - ./src/Api:/code/app

@@ -2,9 +2,17 @@ version: '3.2'
 
 services:
 
-  Api:
+  api:
     container_name: "api"
     build:
       context: ./src/Api
       dockerfile: Dockerfile
     image: bunch/api
+
+  unittests:
+    container_name: "unittests"
+    build:
+      context: .
+      dockerfile: ./tests/Dockerfile
+    volumes:
+      - ./tests:/tests
