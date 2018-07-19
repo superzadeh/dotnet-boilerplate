@@ -11,7 +11,7 @@ namespace Api
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return Ok("Hello Yolo");
+            return Ok("Hello World");
         }
     }
 }
