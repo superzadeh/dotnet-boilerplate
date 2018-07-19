@@ -9,4 +9,8 @@ docker-compose build
 docker-compose up
 ```
 
-That's it!
+## Usage
+
+```sh
+curl http://localhost:8080/api/helloworld
+```
