@@ -17,7 +17,7 @@ namespace Api
         [HttpGet]
         public ActionResult<string> Get()
         {
-            this._logger.LogInformation("Some debug trace here");
+            this._logger.LogDebug("Some debug trace here");
             return Ok("Hello World");
         }
     }
