@@ -6,7 +6,8 @@ Build and run the docker images:
 
 ```sh
 docker-compose build
-docker-compose up
+docker-compose up api # starts the API with auto reload on changes
+docker-compose up unittests # starts the unit tests with auto reload on changes
 ```
 
 ## Usage
